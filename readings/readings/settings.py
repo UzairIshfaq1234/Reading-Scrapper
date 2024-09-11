@@ -17,7 +17,13 @@ NEWSPIDER_MODULE = "readings.spiders"
 #USER_AGENT = "readings (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+
+FEED_EXPORT_FIELDS = [
+    "DateExtractRun",
+    "Title",
+    "product_stock",
+]
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
