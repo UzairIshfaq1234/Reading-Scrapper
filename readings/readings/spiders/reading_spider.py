@@ -39,6 +39,10 @@ class ReadingSpiderSpider(scrapy.Spider):
 
         ISBN = response.xpath('//span[contains(text(),"ISBN: ")]/following-sibling::span//text()').get().replace("/n","").replace("\t", "").strip()
         
+        Shipping_Weight = response.xpath('//span[contains(text(),"Shipping Weight: ")]/following-sibling::span//text()').get().replace("/n","").replace("\t", "").strip().split(".")[1]
+
+
+        descrption = response.xpath('//h2[contains(text(),"Description")]/following-sibling::p').get().replace("/n","").replace("\t", "").replace("<br>", "").replace("<p>", "").strip()
         
         print(title)
         print(author)
@@ -48,6 +52,9 @@ class ReadingSpiderSpider(scrapy.Spider):
         print(sub_category)
         print(Additional_category)
         print(ISBN)
+        print(Shipping_Weight)
+        print(descrption)
+
 
 
         
@@ -57,7 +64,18 @@ class ReadingSpiderSpider(scrapy.Spider):
         item = ReadingsItem()
         item["DateExtractRun"] = strftime("%d/%m/%Y")
         item["Title"] = title
+        item["author"] = author
         item["product_stock"] = product_stock
+        item["product_price"] = product_price
+        item["category"] = category
+        item["sub_category"] = sub_category
+        item["Additional_category"] = Additional_category
+        item["ISBN"] = ISBN
+        item["Shipping_Weight"] = Shipping_Weight
+        item["descrption"] = descrption
+
+
+        
         
         yield item
 

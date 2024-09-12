@@ -22,7 +22,15 @@ ROBOTSTXT_OBEY = False
 FEED_EXPORT_FIELDS = [
     "DateExtractRun",
     "Title",
+    "author",
     "product_stock",
+    "product_price",
+    "category",
+    "sub_category",
+    "Additional_category",
+    "ISBN",
+    "Shipping_Weight",
+    "descrption",
 ]
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)

@@ -11,6 +11,15 @@ class ReadingsItem(scrapy.Item):
     # name = scrapy.Field()
     DateExtractRun = scrapy.Field()   
     Title = scrapy.Field()
+    author = scrapy.Field()
     product_stock = scrapy.Field()
+    product_price = scrapy.Field()
+    category = scrapy.Field()
+    sub_category = scrapy.Field()
+    Additional_category = scrapy.Field()
+    ISBN = scrapy.Field()
+    Shipping_Weight = scrapy.Field()
+    descrption = scrapy.Field()
+
 
 
